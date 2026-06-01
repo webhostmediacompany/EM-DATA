@@ -1,0 +1,76 @@
+.alert-dashboard {
+    padding: 30px;
+    font-family: "Inter", sans-serif;
+    background: var(--bg) !important;
+    min-height: 100vh;
+    color: var(--text) !important;
+}
+
+/* Dashboard Header */
+.header {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary) !important;
+}
+
+.sub-header {
+    color: var(--text-light) !important;
+    margin-bottom: 30px;
+}
+
+/* Alert cards grid */
+.alerts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Base style */
+.alert-card {
+    background: var(--card) !important;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border) !important;
+    border-left: 6px solid #ccc !important;
+    transition: transform 0.2s ease;
+    color: var(--text) !important;
+}
+
+.alert-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Title */
+.alert-card h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+/* Value emphasis */
+.alert-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.critical {
+    border-left-color: var(--warn-text) !important;
+    background: var(--warn-bg) !important;
+}
+
+.warning {
+    border-left-color: var(--warning-text) !important;
+    background: var(--warning-bg) !important;
+}
+
+.info {
+    border-left-color: var(--info-text) !important;
+    background: var(--info-bg) !important;
+}
+
+/* Text styling inside cards */
+.alert-card p {
+    margin: 0;
+    color: var(--text-light) !important;
+}

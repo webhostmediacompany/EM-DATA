@@ -1,0 +1,124 @@
+/* Use the same color palette from navbar */
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --mobile-bg: #f9fafb;
+}
+
+/* Full page */
+.login-container {
+    height: 100vh;
+    background: var(--mobile-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.login-card {
+    width: 380px;
+    background: var(--bg);
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+/* Logo Wrapper */
+.login-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-logo-img {
+    height: 45px;
+    width: 45px;
+}
+
+.login-logo-text {
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Title */
+.login-title {
+    font-size: 22px;
+    margin-top: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.login-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: var(--text-light);
+}
+
+/* Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-label {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.login-input {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    margin-bottom: 18px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.login-input:focus {
+    border-color: var(--primary);
+}
+
+/* Button */
+.login-btn {
+    background: var(--primary);
+    padding: 12px 0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: var(--primary-hover);
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 18px;
+}
+
+.forgot-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--primary);
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}

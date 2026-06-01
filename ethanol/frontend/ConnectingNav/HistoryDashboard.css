@@ -1,0 +1,210 @@
+/* Uses same palette as login page */
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --mobile-bg: #f9fafb;
+}
+
+/* History Container */
+.history-box {
+    background: var(--bg);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    font-family: inherit;
+}
+
+/* Title */
+.history-box h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Logs container */
+.log-container {
+    max-height: 420px;
+    overflow-y: auto;
+    background: var(--mobile-bg);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+/* Each log row */
+.log-row {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    padding: 8px 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    animation: fadeIn 0.15s ease-in-out;
+}
+
+.log-row:hover {
+    background: #f3f4f6;
+}
+
+/* Time */
+.log-row .time {
+    color: var(--text-light);
+    font-size: 13px;
+    margin-right: 10px;
+    min-width: 130px;
+}
+
+/* Status dot */
+.log-row .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+/* Status colors */
+.log-row.info {
+    color: var(--primary);
+}
+
+.log-row.warning {
+    color: #f59e0b;
+}
+
+.log-row.error {
+    color: #ef4444;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.history-box {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.history-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.history-filter {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.log-container {
+    max-height: 520px;
+    overflow-y: auto;
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.log-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    animation: fadeIn 0.15s ease-in-out;
+    border: 1px solid #e5e7eb;
+}
+
+.log-row:hover {
+    background: #f3f4f6;
+}
+
+.log-left {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.log-title {
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.msg {
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.time {
+    font-size: 12px;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+/* Status colors */
+.log-row.info .dot {
+    background: #2563eb;
+}
+
+.log-row.warning .dot {
+    background: #f59e0b;
+}
+
+.log-row.error .dot {
+    background: #ef4444;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

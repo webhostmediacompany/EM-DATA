@@ -1,0 +1,68 @@
+/* ==========================
+   CSS FILE IN SAME CANVAS
+   VideoDashboard.css
+========================== */
+
+:root {
+    --bg: #f4f6fb;
+    --white: #ffffff;
+    --text: #1f2937;
+    --border: #e5e7eb;
+    --radius: 16px;
+    --shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.vd-container {
+    padding: 40px;
+    background: var(--bg);
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+}
+
+.vd-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text);
+}
+
+.vd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.vd-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: 0.2s ease;
+}
+
+.vd-card:hover {
+    transform: translateY(-4px);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+.vd-video {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+}
+
+.vd-info {
+    padding: 5px 5px;
+}
+
+.vd-video-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.vd-caption {
+    font-size: 14px;
+    color: #4b5563;
+}

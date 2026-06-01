@@ -1,0 +1,240 @@
+/* ===============================
+   RESPONSIVE PROFILE MENU (FINAL CLEAN VERSION)
+   =============================== */
+
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --mobile-bg: #f9fafb;
+}
+
+/* Container inside navbar */
+.pm-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+/* Wrapper to hold avatar + dropdown */
+.pm-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+/* ===============================
+   Avatar (Profile Icon)
+   =============================== */
+.pm-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #2563eb;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid var(--border);
+    transition: 0.25s ease;
+    padding: 2px;
+    background: white;
+}
+
+.pm-avatar:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile avatar size */
+@media (max-width: 480px) {
+    .pm-avatar {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 360px) {
+    .pm-avatar {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ===============================
+   DROPDOWN BOX (DESKTOP DEFAULT)
+   =============================== */
+.pm-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 260px;
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    z-index: 9999;
+    animation: pmFade 0.18s ease-out;
+    box-shadow: 0 0 2px #2563eb;
+}
+
+@keyframes pmFade {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   PROFILE INFO
+   =============================== */
+.pm-info {
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+}
+
+.pm-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #2563eb;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.pm-info h3 {
+    margin: 4px 0;
+    font-size: 17px;
+    color: var(--text);
+}
+
+.pm-info p {
+    margin: 2px 0;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.pm-info span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Mobile scaling */
+@media (max-width: 480px) {
+    .pm-info img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .pm-info h3 {
+        font-size: 16px;
+    }
+}
+
+/* ===============================
+   PHOTO ACTIONS
+   =============================== */
+.pm-photo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.pm-upload-btn,
+.pm-remove-btn {
+    padding: 6px 10px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.pm-upload-btn:hover {
+    background: var(--primary-hover);
+}
+
+.pm-remove-btn {
+    background: #ef4444;
+}
+
+.pm-remove-btn:hover {
+    background: #dc2626;
+}
+
+/* Mobile buttons */
+@media (max-width: 480px) {
+
+    .pm-upload-btn,
+    .pm-remove-btn {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+/* ===============================
+   OPTIONS LIST
+   =============================== */
+.pm-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pm-options li {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.pm-options li:hover {
+    background: var(--mobile-bg);
+}
+
+.pm-logout {
+    color: #ef4444;
+    font-weight: bold;
+    color: red;    
+}
+
+/* ===============================
+   PERFECT MOBILE CENTERED CARD
+   =============================== */
+@media (max-width: 500px) {
+    .pm-dropdown {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 320px;
+        border-radius: 16px;
+        z-index: 99999;
+        right: auto;
+        animation: pmFade 0.18s ease-out;
+    }
+}
+
+/* Very small devices */
+@media (max-width: -360px) {
+    .pm-dropdown {
+        width: 92%;
+        max-width: 300px;
+    }
+}

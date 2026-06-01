@@ -1,0 +1,150 @@
+/* ==== GLOBAL RESET ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f6f9;
+}
+
+/* ==== NAVBAR CONTAINER ==== */
+.nav-container {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+/* ==== NAVBAR INNER CONTENT ==== */
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==== LOGO ==== */
+.nav-logo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+    max-width: 260px;
+}
+
+/* ==== DESKTOP NAV LINKS ==== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: #008f4c;
+}
+
+/* ==== SIGN IN BUTTON ==== */
+.signin-btn {
+    background: #008f4c;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.signin-btn:hover {
+    background: #006f3a;
+}
+
+/* ==== MOBILE MENU BUTTON ==== */
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==== MOBILE MENU ==== */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-link {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.mobile-link:hover {
+    color: #008f4c;
+}
+
+.mobile-signin-btn {
+    background: #008f4c;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ==== RESPONSIVE RULES ==== */
+@media (max-width: 900px) {
+    .nav-logo {
+        max-width: 220px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-logo {
+        max-width: 190px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 16px;
+        max-width: 170px;
+    }
+
+    .nav-toggle {
+        font-size: 24px;
+    }
+}

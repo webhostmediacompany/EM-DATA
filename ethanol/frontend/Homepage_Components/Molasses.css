@@ -1,0 +1,132 @@
+/* ===============================
+   CLEAN MODERN MOLASSES DASHBOARD SECTION
+   =============================== */
+
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+}
+
+/* Main Container */
+.molasses-container {
+    width: 100%;
+    padding: 20px 0;
+    background: var(--bg);
+    /* border-bottom: 1px solid var(--border); */
+}
+
+/* Wrapper */
+.molasses-wrapper {
+    width: 92%;
+    margin: auto;
+}
+
+/* Title */
+.molasses-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.molasses-subtext {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* Grid Cards */
+.molasses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.mol-card {
+    background: var(--bg);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: 0.25s;
+}
+
+.mol-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.card-label {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+}
+
+.card-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.card-info {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* Bottom Details */
+.molasses-details {
+    text-align: center;
+    margin-top: 50px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.details-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    /* text-align: center; */
+}
+
+.details-list li {
+    font-size: 15px;
+    color: var(--text);
+    margin: 8px 0;
+    list-style: none;
+    text-align: justify,center;
+}
+
+/* CTA Button */
+.mol-btn {
+    margin-top: 18px;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.mol-btn:hover {
+    background: var(--primary-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-value {
+        font-size: 22px;
+    }
+}

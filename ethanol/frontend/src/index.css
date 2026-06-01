@@ -1,0 +1,332 @@
+/* ==========================================================================
+   GLOBAL DARK/LIGHT MODE STYLING SYSTEM (PREMIUM THEME)
+   ========================================================================== */
+
+/* Light Theme Variables (Default) */
+:root {
+    --bg-color: #ffffff;
+    --bg-soft-color: #f8fafc;
+    --card-color: #ffffff;
+    --border-color: #e5e7eb;
+    --text-color: #1f2937;
+    --text-light-color: #64748b;
+    --primary-color: #2563eb;
+    --primary-hover-color: #1d4ed8;
+    --primary-2-color: #10b981;
+    --mobile-bg-color: #f9fafb;
+    --dropdown-bg-color: #ffffff;
+    --card-bg-color: #f9fafb;
+    --shadow-color: rgba(0, 0, 0, 0.06);
+    --shadow-strong-color: rgba(0, 0, 0, 0.12);
+
+    /* Alert / Contextual Colors (Light Theme) */
+    --warn-bg-color: #ffe5e8;
+    --warn-text-color: #e63946;
+    --warning-bg-color: #fff6e1;
+    --warning-text-color: #f4a100;
+    --info-bg-color: #e8f2ff;
+    --info-text-color: #1d87ff;
+    --success-bg-color: #e8ffe9;
+    --success-text-color: #28a745;
+    --accent-bg-color: #f1f5f9;
+}
+
+/* Dark Theme Variables (Pure High-Contrast Space Black & Vibrant Accents) */
+[data-theme="dark"] {
+    --bg-color: #000000;
+    --bg-soft-color: #121212;
+    --card-color: #1c1c1e;
+    --border-color: #2d2d2d;
+    --text-color: #ffffff;
+    --text-light-color: #a1a1a6;
+    --primary-color: #3b82f6; /* Premium tech blue instead of white for proper highlight visibility! */
+    --primary-hover-color: #2563eb;
+    --primary-2-color: #30d158;
+    --mobile-bg-color: #121212;
+    --dropdown-bg-color: #1c1c1e;
+    --card-bg-color: #1c1c1e;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --shadow-strong-color: rgba(0, 0, 0, 0.9);
+
+    /* Alert / Contextual Colors (Dark Theme - Soft glow dark backgrounds and high contrast texts) */
+    --warn-bg-color: #450a0a;
+    --warn-text-color: #fca5a5;
+    --warning-bg-color: #451a03;
+    --warning-text-color: #fed7aa;
+    --info-bg-color: #172554;
+    --info-text-color: #bfdbfe;
+    --success-bg-color: #064e3b;
+    --success-text-color: #a7f3d0;
+    --accent-bg-color: #1e293b;
+}
+
+/* Override existing CSS variables across all stylesheets dynamically */
+:root, [data-theme="dark"], html[data-theme="dark"] {
+    --bg: var(--bg-color) !important;
+    --bg-soft: var(--bg-soft-color) !important;
+    --card: var(--card-color) !important;
+    --border: var(--border-color) !important;
+    --text: var(--text-color) !important;
+    --text-light: var(--text-light-color) !important;
+    --primary: var(--primary-color) !important;
+    --primary-hover: var(--primary-hover-color) !important;
+    --primary-2: var(--primary-2-color) !important;
+    --mobile-bg: var(--mobile-bg-color) !important;
+    --dropdown-bg: var(--dropdown-bg-color) !important;
+    --card-bg: var(--card-bg-color) !important;
+    --shadow: var(--shadow-color) !important;
+    --shadow-strong: var(--shadow-strong-color) !important;
+
+    /* Mappings for contextual colors */
+    --warn-bg: var(--warn-bg-color) !important;
+    --warn-text: var(--warn-text-color) !important;
+    --warning-bg: var(--warning-bg-color) !important;
+    --warning-text: var(--warning-text-color) !important;
+    --info-bg: var(--info-bg-color) !important;
+    --info-text: var(--info-text-color) !important;
+    --success-bg: var(--success-bg-color) !important;
+    --success-text: var(--success-text-color) !important;
+    --accent-bg: var(--accent-bg-color) !important;
+}
+
+/* Global Reset and Body Styling */
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    font-family: "Inter", "Outfit", system-ui, -apple-system, sans-serif !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme adaptation for all containers and blocks */
+.card, .content-inner, .ml-card, .rf-form.enhanced, .rf-section, .about-container, .molasses-details, .login-card, .history-box, .log-row, .chart-card, .panel, .quick-card, .product-card, .new-item {
+    background-color: var(--card-color) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: var(--shadow) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quick Stats Shimmer in Dark Mode */
+[data-theme="dark"] .quick-card::after {
+    background: linear-gradient(120deg, transparent 60%, rgba(255, 255, 255, 0.08) 80%, transparent 95%) !important;
+}
+
+/* Hover adaptation */
+.quick-card:hover, .product-card:hover, .panel:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong) !important;
+}
+
+/* Text and Typography Color Settings */
+h1, h2, h3, h4, h5, h6, span, p, li, label, td, th {
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+}
+
+/* Premium State & Accent Color Helper Classes - Explicitly override global important rules to prevent text washed out/overlapping text colors */
+.nav-logo,
+.header,
+.ems-title,
+.dashboard-header h1,
+.region-card h4,
+.details-title,
+.ml-title,
+.card-value {
+    color: var(--primary) !important; /* Premium branding dynamic tech-blue */
+}
+
+.success-text,
+.positive, 
+.up,
+.card-revenue {
+    color: #10b981 !important; /* Premium Emerald Success Green */
+}
+
+.negative, 
+.dn, 
+.error-text,
+.critical {
+    color: #ef4444 !important; /* Premium Rose Alert Red */
+}
+
+.warning-text,
+.warn-text,
+.warning {
+    color: #f59e0b !important; /* Premium Warning Orange */
+}
+
+.info-text,
+.info {
+    color: #3b82f6 !important; /* Premium Info Blue */
+}
+
+/* Ensure carousel slide texts are always high-contrast white on dark image overlays */
+.carousel-overlay h2,
+.carousel-overlay p,
+.carousel-overlay span,
+.carousel-overlay a {
+    color: #ffffff !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65) !important;
+}
+
+.muted, 
+.text-light, 
+p.muted, 
+span.muted, 
+.card-label, 
+.card-info, 
+.sidebar-dropdown a, 
+.quick-card h4, 
+.stk, 
+.ems-subtitle,
+.sub-header {
+    color: var(--text-light-color) !important;
+}
+
+/* Table and headers */
+.enh-table th, .rf-table th {
+    background-color: var(--bg-soft-color) !important;
+    color: var(--text-color) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+}
+
+.enh-table td, .rf-table td {
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+.enh-table tbody tr:hover, .rf-table tr:hover {
+    background-color: var(--bg-soft-color) !important;
+}
+
+/* Inputs, Dropdowns, and form fields */
+.input, .rf-input, .DropdownOpt, select, input, textarea {
+    background-color: var(--bg-soft-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.input:focus, .rf-input:focus, select:focus, input:focus, textarea:focus {
+    background-color: var(--bg-color) !important;
+    border-color: var(--primary-color) !important;
+    outline: none;
+}
+
+/* Recharts charts grid colors (Dark Mode Gridlines) */
+[data-theme="dark"] .recharts-cartesian-grid-horizontal line,
+[data-theme="dark"] .recharts-cartesian-grid-vertical line {
+    stroke: var(--border-color);
+}
+
+[data-theme="dark"] .recharts-text {
+    fill: var(--text-light-color);
+}
+
+[data-theme="dark"] .recharts-legend-item-text {
+    color: var(--text-color) !important;
+}
+
+/* Dark theme specific details panels */
+[data-theme="dark"] .content-inner section {
+    background: var(--bg-soft-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .content-inner section:hover {
+    background: var(--card-color) !important;
+}
+
+/* Activity logs */
+[data-theme="dark"] .log-row {
+    background: var(--card-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .log-row:hover {
+    background: var(--bg-soft-color) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-soft-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light-color);
+}
+
+/* Premium Black-Theme Focused Input & Select Visibility Fix */
+[data-theme="dark"] select:focus, 
+[data-theme="dark"] input:focus, 
+[data-theme="dark"] textarea:focus, 
+[data-theme="dark"] .input:focus, 
+[data-theme="dark"] .rf-input:focus,
+[data-theme="dark"] .DropdownOpt:focus {
+    background-color: #121212 !important;
+    background: #121212 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Custom dropdown options visibility in dark mode */
+[data-theme="dark"] select option {
+    background-color: #1c1c1e !important;
+    color: #ffffff !important;
+}
+
+/* Premium Selection, Placeholder & Chart Tooltip Polish */
+input::placeholder,
+textarea::placeholder,
+.search-box::placeholder,
+.search input::placeholder {
+    color: var(--text-light) !important;
+    opacity: 0.55 !important;
+}
+
+::selection {
+    background-color: rgba(37, 99, 235, 0.3) !important;
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] ::selection {
+    background-color: rgba(59, 130, 246, 0.4) !important;
+    color: #ffffff !important;
+}
+
+/* Premium Recharts Tooltip Customization to fix light/dark contrast and borders */
+.recharts-default-tooltip {
+    background-color: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    box-shadow: var(--shadow-strong) !important;
+    padding: 10px 14px !important;
+}
+
+.recharts-tooltip-item {
+    color: inherit !important;
+}
+
+.recharts-default-tooltip li,
+.recharts-default-tooltip span,
+.recharts-tooltip-item,
+.recharts-tooltip-item span {
+    color: inherit !important;
+}
+
+.recharts-tooltip-label {
+    color: var(--text) !important;
+    font-weight: 700;
+    margin-bottom: 4px;
+}

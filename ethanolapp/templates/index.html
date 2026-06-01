@@ -1,0 +1,72 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Real-Time Ethanol Dashboard {% endblock %} </title>
+<link rel="icon" type="image/png" href="./static\assets\flamingo.png">
+  <link rel="stylesheet" href={% static "css/style.css" %}/>
+</head>
+
+<body>
+
+<nav class="nav-container">
+
+  <div class="nav-content">
+    
+    <!-- Logo -->
+    <h1 class="nav-logo">
+    <img src="./static\assets\flamingo.png" alt="Description of image" style="width:35px;height:35px;">
+      Go-Flamingo</h1>
+
+    <!-- Desktop Links -->
+    <div class="nav-links" id="desktopLinks">
+      <a href="#" class="nav-link">Dashboard</a>
+      <a href="#" class="nav-link">Ethanol Production</a>
+      <a href="#" class="nav-link">Molasses Stats</a>
+      <a href="#" class="nav-link">Alerts</a>
+      <a href="#" class="nav-link">Settings</a>
+
+      <!-- Sign In -->
+      <button class="signin-btn" onclick="handleSignIn()">Sign In</button>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button class="nav-toggle" id="navToggle">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" class="mobile-link">Dashboard</a>
+    <a href="#" class="mobile-link">Ethanol Production</a>
+    <a href="#" class="mobile-link">Molasses Stats</a>
+    <a href="#" class="mobile-link">Alerts</a>
+    <a href="#" class="mobile-link">Settings</a>
+     
+    <button class="mobile-signin-btn" onclick="handleSignIn()">Sign In</button>
+  </div>
+</nav>
+<script>
+  const toggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  toggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+
+    if (toggle.textContent === "☰") {
+      toggle.textContent = "✖";
+    } else {
+      toggle.textContent = "☰";
+    }
+  });
+  
+  function handleSignIn() {
+    alert("🔐 Redirecting to Sign In page...");
+  }
+</script>
+</body>
+</html> 

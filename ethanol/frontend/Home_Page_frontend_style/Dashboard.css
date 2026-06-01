@@ -1,0 +1,143 @@
+/* ================================
+   Dashboard Page - Clean UI Theme
+   Matching Navbar + Footer Style
+================================ */
+
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --card-bg: #f9fafb;
+}
+
+/* Container */
+.dashboard-container {
+    width: 92%;
+    margin: 120px auto 60px;
+}
+
+/* Header */
+.dashboard-header h1 {
+    /* font-size: 28px; */
+    font-weight: 100;
+    color: var(--primary);
+}
+
+.dashboard-header p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 680px;
+    line-height: 1.6;
+    justify-content: center;
+    text-align: center;
+}
+
+/* KPI Cards */
+.dashboard-cards {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.dash-card {
+    background: var(--card-bg);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.dash-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+/* Icons */
+.dash-icon {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Card Text */
+.dash-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.dash-value {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.dash-trend {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.positive {
+    color: #16a34a;
+}
+
+.negative {
+    color: #dc2626;
+}
+
+/* Region Section */
+.region-section {
+    margin-top: 60px;
+}
+
+.region-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.region-text {
+    color: var(--text-light);
+    margin-top: 8px;
+    max-width: 600px;
+}
+
+/* Region Grid */
+.region-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.region-card {
+    background: var(--card-bg);
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+.region-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.region-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.region-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 6px;
+}

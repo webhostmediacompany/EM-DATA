@@ -1,0 +1,135 @@
+/* ================================
+   FOOTER — CLEAN DASHBOARD STYLE
+   ================================ */
+
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+}
+
+/* Footer Container */
+.footer-container {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 50px 0 20px;
+    margin-top: 40px;
+}
+
+/* Wrapper */
+.footer-wrapper {
+    width: 92%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+/* Logo */
+.footer-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* Social Icons */
+.footer-social a {
+    font-size: 20px;
+    margin-right: 12px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--primary);
+}
+
+/* Links Section */
+.footer-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.footer-link {
+    display: block;
+    margin: 6px 0;
+    color: var(--text-light);
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+/* Newsletter */
+.footer-news-text {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.newsletter-box {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.newsletter-box button {
+    padding: 10px 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.newsletter-box button:hover {
+    background: var(--primary-hover);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .newsletter-box {
+        flex-direction: column;
+    }
+
+    .newsletter-box button {
+        width: 100%;
+    }
+}

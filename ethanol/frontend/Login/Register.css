@@ -1,0 +1,99 @@
+/* Same CSS you provided */
+:root {
+    --bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --mobile-bg: #f9fafb;
+}
+
+/* Outer Container */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--mobile-bg);
+}
+
+/* Login Box */
+.login-card {
+    width: 360px;
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+/* Title */
+.login-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.login-subtitle {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.login-btn:hover {
+    background: var(--primary-hover);
+}
+
+/* Links */
+.login-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-links a {
+    font-size: 14px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}

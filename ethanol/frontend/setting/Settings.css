@@ -1,0 +1,88 @@
+.ems-page {
+    padding: 30px;
+    background: var(--bg) !important;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    color: var(--text) !important;
+}
+
+/* Titles */
+.ems-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary) !important;
+}
+
+.ems-subtitle {
+    color: var(--text-light) !important;
+    margin-bottom: 25px;
+}
+
+/* Grid layout */
+.ems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Card styles */
+.ems-card {
+    background: var(--card) !important;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border) !important;
+    border-left: 6px solid #ccc !important;
+    transition: transform 0.2s ease;
+    color: var(--text) !important;
+}
+
+.ems-card:hover {
+    transform: translateY(-3px);
+}
+
+.ems-card h2 {
+    margin-top: 0;
+    color: var(--text) !important;
+}
+
+/* Input elements */
+.ems-card label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: var(--text-light) !important;
+}
+
+.ems-card input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid var(--border) !important;
+    background: var(--bg-soft) !important;
+    color: var(--text) !important;
+    font-size: 15px;
+}
+
+.ems-info {
+    margin-top: 10px;
+    color: var(--text) !important;
+    font-size: 14px;
+}
+
+/* Theme Colors */
+.card-efficiency {
+    border-left-color: var(--info-text) !important;
+    background: var(--info-bg) !important;
+}
+
+.card-resources {
+    border-left-color: var(--warning-text) !important;
+    background: var(--warning-bg) !important;
+}
+
+.card-revenue {
+    border-left-color: var(--success-text) !important;
+    background: var(--success-bg) !important;
+}

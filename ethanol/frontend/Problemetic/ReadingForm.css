@@ -1,0 +1,470 @@
+/* ===========================================================================
+   GLOBAL DESIGN TOKENS (Sync with Navbar Style)
+=========================================================================== */
+:root {
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --text-light: #475569;
+
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+
+    --radius-lg: 18px;
+    --radius-sm: 10px;
+
+    --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.06);
+    --shadow-mid: 0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+/* ===========================================================================
+   1) GLOBAL WRAPPER
+   =========================================================================== */
+.rf-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 36px);
+    font-family: "Inter", "Outfit", system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+}
+
+/* ===========================================================================
+   2) PREMIUM PAGE TITLE (Futuristic Glass Panel)
+   =========================================================================== */
+.rf-title {
+    font-size: clamp(18px, 4.5vw, 24px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--text);
+    border-right: 5px solid var(--text);
+    text-transform: uppercase;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+}
+
+/* ===========================================================================
+   3) PREMIUM SECTIONS
+   =========================================================================== */
+.rf-section {
+    background: var(--card);
+    padding: clamp(20px, 3vw, 28px);
+    border-radius: var(--radius-lg);
+    margin-top: 36px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible; /* Prevents container clipping child elements */
+}
+
+.rf-section h2 {
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 800;
+    margin-bottom: 22px;
+    letter-spacing: -0.4px;
+    display: inline-block;
+    border-bottom: 3px solid var(--text);
+    padding-bottom: 6px;
+}
+
+/* ===========================================================================
+   4) CONTROLS TOOLBAR
+   =========================================================================== */
+.dashboard-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--bg-soft);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 260px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    font-size: 14px;
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus {
+    border-color: var(--text);
+    background: var(--bg);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ===========================================================================
+   5) MODERN HIGH-CONTRAST BUTTONS
+   =========================================================================== */
+.rf-btn {
+    padding: 12px 20px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--text);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.rf-btn:hover {
+    background: transparent;
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.rf-btn.small {
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.rf-btn.danger {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: white;
+}
+
+.rf-btn.danger:hover {
+    background: transparent;
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+/* ===========================================================================
+   6) GLASSMORPHIC FORM DESIGNS
+   =========================================================================== */
+.rf-form.enhanced {
+    background: rgba(255, 255, 255, 0.02);
+    padding: clamp(20px, 4vw, 32px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-strong);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 10px;
+}
+
+.rf-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.rf-row.full {
+    flex-direction: column;
+}
+
+.DropdownOpt {
+    width: 100%;
+    min-height: 48px;
+    text-align: start;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    font-size: 14px;
+    color: var(--text);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.rf-input {
+    width: 100%;
+    min-height: 42px;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #d0d7e2;
+    background: var(--surface);
+    font-size: 14px;
+    transition: .25s;
+    box-sizing: border-box;
+}
+
+.rf-input:focus {
+    outline: none;
+    background: white;
+    text-align: center;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.rf-actions {
+    display: flex;
+    gap: 14px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+/* ===========================================================================
+   6b) CHARTS RESPONSIVENESS & PREMIUM DISPLAY
+   =========================================================================== */
+.charts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)) !important;
+    gap: clamp(12px, 2vw, 20px) !important;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.chart-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: clamp(12px, 2vw, 18px);
+    box-shadow: var(--shadow-soft);
+    min-width: 0; /* Dynamic shrinking capability for SVG/Recharts! */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chart-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-mid);
+}
+
+.chart-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--text);
+}
+
+/* ===========================================================================
+   7) TABLE — Perfect Mobile Responsiveness
+=========================================================================== */
+
+.rf-table-wrapper {
+    width: 100%;
+    max-height: 420px;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin-top: 14px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    box-shadow: var(--shadow-soft);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.rf-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+    /* prevents squeezing */
+    font-size: 14px;
+}
+
+.rf-table th {
+    background: #f1f5f9;
+    padding: 12px 10px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.rf-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.rf-table tr:hover {
+    background: #f9fafb;
+}
+
+/* Scrollbars */
+.rf-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.rf-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 50px;
+}
+
+.rf-table-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 50px;
+}
+
+.rf-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ===========================================================================
+   8) RESPONSIVE BREAKPOINTS (Clean + Perfect)
+=========================================================================== */
+@media (max-width: 1024px) {
+    .rf-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .charts-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+        text-align: center !important;
+    }
+
+    .charts-header > div {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    .dashboard-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .export-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .rf-table {
+        min-width: 700px;
+    }
+
+    .rf-table th,
+    .rf-table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rf-title {
+        padding: 18px;
+        border-left-width: 4px;
+    }
+
+    .rf-table {
+        min-width: 600px;
+    }
+
+    .rf-table th,
+    .rf-table td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+}
+
+/* ===========================================================================
+   9) PAGINATION
+=========================================================================== */
+.pagination {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.page-btn {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.page-btn:hover {
+    background: #f1f5f9;
+}
+
+.page-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* ===========================================================================
+   10) EDIT POPUP
+=========================================================================== */
+.rf-edit-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-mid);
+    z-index: 2000 !important;
+}
+
+.rf-edit-card h3 {
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* ===========================================================================
+   ANIMATION
+=========================================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================================================================
+   11) HEATMAP CONTRAST OVERRIDE
+=========================================================================== */
+.heatmap-cell {
+    color: var(--cell-color) !important;
+}

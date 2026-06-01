@@ -1,0 +1,631 @@
+/* ===============================
+   ETHANOL MEGA DASHBOARD — CLEAN + PREMIUM UI
+   =============================== */
+
+/* ---------- Color Palette ---------- */
+:root {
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #64748b;
+    --primary: #2563eb;
+    --primary-2: #10b981;
+    --shadow: rgba(0, 0, 0, 0.06);
+    --shadow-strong: rgba(0, 0, 0, 0.12);
+    --rounded: 14px;
+    --radius-sm: 10px;
+
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+/* Smooth global animation */
+* {
+    transition: all 0.25s ease;
+}
+
+/* Page fade-in */
+.emd-root {
+    background: var(--bg) !important;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    color: var(--text) !important;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   HERO SECTION + SLIDER
+   =============================== */
+.h3head {
+    color: var(--primary) !important;
+}
+
+.descbutton {
+    padding: 5px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.ghost {
+    padding: 5px;
+    margin-left: 5px;
+    background-color: rgb(228, 44, 44);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.product-desc-button {
+    padding: 5px;
+    background-color: rgb(111, 108, 108);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.emd-hero {
+    max-width: 1200px;
+    margin: 24px auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+    padding: 0 16px;
+    align-items: start;
+}
+
+.emd-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--rounded);
+    background: var(--card);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+.emd-slide-img {
+    width: 100%;
+    height: 345px;
+    object-fit: cover;
+    border-radius: var(--rounded);
+    filter: brightness(0.92) contrast(1.05);
+    transition: transform 0.8s ease;
+}
+
+.emd-slider:hover .emd-slide-img {
+    transform: scale(1.04);
+}
+
+.emd-slide-caption {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    max-width: 60%;
+    background: rgba(255, 255, 255, 0.65) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    color: #111111 !important;
+}
+
+[data-theme="dark"] .emd-slide-caption {
+    background: rgba(28, 28, 30, 0.7) !important;
+    color: #ffffff !important;
+}
+
+.emd-slide-caption h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.emd-slide-caption p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--text-light) !important;
+}
+
+/* Slider Controls */
+.emd-slider-controls {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.emd-slider-controls button {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border: none;
+    cursor: pointer;
+}
+
+.emd-slider-controls button:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Slider Dots */
+.emd-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 0;
+}
+
+.emd-dots button {
+    width: 8px;
+    height: 8px;
+    background: #d4d4d4;
+    border-radius: 50%;
+}
+
+.emd-dots .active {
+    background: var(--primary);
+}
+
+/* ===============================
+   QUICK STATS
+   =============================== */
+.emd-quick {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.quick-card {
+    background: linear-gradient(145deg, var(--card), var(--bg-soft)) !important;
+    padding: 16px;
+    border-radius: var(--rounded);
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-soft) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-card h4 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.quick-card .big {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.quick-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Shimmer */
+.quick-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 60%, rgba(255, 255, 255, 0.5) 80%, transparent 95%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(50%);
+    }
+}
+
+/* ===============================
+   STOCK TICKER
+   =============================== */
+.stock-ticker {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stk {
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    animation: floatTick 4s ease-in-out infinite alternate;
+}
+
+.stk .up {
+    color: var(--primary-2);
+}
+
+.stk .dn {
+    color: #ef4444;
+}
+
+@keyframes floatTick {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+/* ===============================
+   MAIN GRID
+   =============================== */
+.emd-grid {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 20px;
+}
+
+.emd-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.panel {
+    padding: 16px;
+    background: var(--card);
+    border-radius: var(--rounded);
+    border: 1px solid rgba(229, 231, 235, 0.6);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.panel:hover {
+    transform: translateY(-3px);
+}
+
+/* ===============================
+   PRODUCT CARDS
+   =============================== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.product-card {
+    padding: 14px;
+    background: var(--card);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   CART & TELEMETRY
+   =============================== */
+.cart-panel {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-light);
+}
+
+.telemetry {
+    display: flex;
+    gap: 10px;
+}
+
+.telemetry div {
+    padding: 10px;
+    background: var(--bg-soft) !important;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary) !important;
+    color: var(--text) !important;
+    border-top: 1px solid var(--border) !important;
+    border-right: 1px solid var(--border) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+/* ===============================
+   CHARTS PANEL
+   =============================== */
+.charts-panel {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 16px;
+}
+
+.charts-panel>div {
+    background: var(--card) !important;
+    border-radius: 12px;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+/* ===============================
+   FLOW SVG
+   =============================== */
+.flow-svg {
+    width: 100%;
+    height: 120px;
+    background: var(--bg-soft);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+/* ===============================
+   NEWS LIST
+   =============================== */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-item {
+    background: var(--card) !important;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border) !important;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--shadow-soft) !important;
+    color: var(--text) !important;
+}
+
+.news-item:hover {
+    background: var(--bg-soft) !important;
+    transform: translateX(6px);
+}
+
+/* ===============================
+   WAVE/PREMIUM PANEL
+   =============================== */
+.wave-panel {
+    background: linear-gradient(180deg, var(--card) 0%, var(--bg-soft) 100%) !important;
+    border-radius: var(--rounded);
+    border: 1px solid var(--border) !important;
+    overflow: hidden;
+}
+
+.wave-bridge {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.wave-info {
+    width: 40%;
+    padding: 18px;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 1050px) {
+    .emd-hero,
+    .emd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .wave-bridge svg {
+        display: none;
+    }
+}
+
+/* ===============================
+   FIXED — FULLY RESPONSIVE CHARTS FOR DESKTOP & MOBILE
+   =============================== */
+
+/* Ensure charts resize smoothly */
+.charts-panel {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 16px;
+    align-items: stretch;
+}
+
+/* Force charts to scale properly */
+.charts-panel>div {
+    width: 100%;
+    height: auto;
+    min-height: 260px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix canvas charts inside panel */
+.charts-panel canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 380px;
+}
+
+/* Desktop improvement: charts take full width ratio */
+@media (min-width: 1051px) {
+    .charts-panel {
+        grid-template-columns: 1.4fr 0.8fr;
+        /* Better proportional layout */
+    }
+}
+
+/* Tablet Layout */
+@media (max-width: 850px) {
+    .charts-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-panel>div {
+        min-height: 240px;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    .charts-panel canvas {
+        max-height: 300px;
+    }
+
+    .charts-panel>div {
+        padding: 10px;
+    }
+}
+/* ===============================
+   RESPONSIVE FIXES
+   =============================== */
+
+/* HERO + QUICK STATS */
+.emd-hero {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+}
+
+@media (max-width: 1050px) {
+    .emd-hero {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* QUICK STATS CARDS */
+.emd-quick {
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* MAIN GRID */
+.emd-grid {
+    grid-template-columns: 1fr 480px;
+    gap: 20px;
+}
+
+@media (max-width: 1050px) {
+    .emd-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CHARTS PANEL FIX */
+.charts-panel {
+    grid-template-columns: 1.4fr 0.8fr;
+}
+
+@media (max-width: 850px) {
+    .charts-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-panel>div {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 600px) {
+    .charts-panel canvas {
+        max-height: 300px;
+    }
+
+    .charts-panel>div {
+        padding: 10px;
+    }
+}
+
+/* WAVE PANEL & BRIDGE */
+.wave-panel {
+    overflow: hidden;
+}
+
+.wave-bridge {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+}
+
+.wave-bridge svg {
+    flex: 1 1 60%;
+    min-width: 280px;
+    height: auto;
+}
+
+.wave-info {
+    flex: 1 1 35%;
+    min-width: 200px;
+}
+
+/* TELEMETRY / STOCK / CART CARDS */
+.cart-panel,
+.telemetry,
+.stock-ticker {
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stk {
+    flex: 1 1 auto;
+}
+
+/* PRODUCT CARDS */
+.products {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* FLOW SVG */
+.flow-svg {
+    width: 100%;
+    height: auto;
+}
+
+/* GENERAL MOBILE FIXES */
+@media (max-width: 500px) {
+    .emd-slider-controls {
+        flex-direction: column;
+        right: 8px;
+    }
+
+    .emd-slider-controls button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .emd-slide-caption {
+        max-width: 80%;
+        font-size: 12px;
+    }
+}

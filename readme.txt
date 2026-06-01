@@ -115,3 +115,8 @@ To execute the backend Django test suite and ensure all features work perfectly:
 # View aggregate summary stats (GET):
   http://127.0.0.1:8081/api/readings/summary/
 ===================================================================
+
+cd "D:\Ethanol-molasses-realtime-production-dashboard--main\Ethanol-molasses-realtime-production-dashboard--main"
+git remote remove origin
+git remote add origin <CORRECT-REPO-URL>
+git push -u origin main

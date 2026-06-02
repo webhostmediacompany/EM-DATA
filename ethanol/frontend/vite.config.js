@@ -11,10 +11,10 @@ const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json')
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   // Check if building in standalone mode (Vercel, Netlify, gh-pages via --mode standalone, or environment overrides)
-  const isStandalone = 
+  const isStandalone =
     mode === 'standalone' ||
-    process.env.VITE_STANDALONE === 'true' || 
-    process.env.VERCEL === 'true' || 
+    process.env.VITE_STANDALONE === 'true' ||
+    process.env.VERCEL === 'true' ||
     process.env.NETLIFY === 'true' ||
     process.env.GITHUB_ACTIONS === 'true';
 
@@ -41,6 +41,26 @@ export default defineConfig(({ mode }) => {
   return {
     base: base,
     plugins: [react()],
+
+    // Development proxy server acting as a bridge to Django backend on port 8081
+    server: {
+      proxy: {
+        // Proxy HTTP API requests to Django
+        '/api': {
+          target: 'http://127.0.0.1:8081',
+          changeOrigin: true,
+          secure: false,
+        },
+        // Proxy WebSocket streams to Django Channels
+        '/ws': {
+          target: 'ws://127.0.0.1:8081',
+          ws: true,
+          changeOrigin: true,
+          secure: false,
+        },
+      },
+    },
+
     build: {
       // Build standalone/development into dist, otherwise build into Django static directory
       outDir: (isStandalone || mode === 'development') ? 'dist' : '../static/frontend',

@@ -9,12 +9,8 @@ export default function useReadingsSocket(onMessage) {
         function connect() {
             const protocol = window.location.protocol === "https:" ? "wss" : "ws";
 
-            // ENV first → fallback to current host
-            const host =
-                import.meta.env.VITE_WS_HOST ||
-                (window.location.port === "5173"
-                    ? `${window.location.hostname}:8081`
-                    : window.location.host);
+            // ENV first → fallback to current browser host (fully bridged via dev proxy in development)
+            const host = import.meta.env.VITE_WS_HOST || window.location.host;
 
             const url = `${protocol}://${host}/ws/readings/`;
 

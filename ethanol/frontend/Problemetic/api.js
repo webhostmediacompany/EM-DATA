@@ -6,12 +6,8 @@
 
 import axios from "axios";
 
-// Auto-pick API BASE from environment configurations, fallback to dynamic absolute URL
-const API_BASE = import.meta.env.VITE_API_BASE || (
-    window.location.port === "5173"
-        ? "http://localhost:8081/api"
-        : `${window.location.protocol}//${window.location.host}/api`
-);
+// Auto-pick API BASE from environment configurations, fallback to dynamic relative bridge path
+const API_BASE = import.meta.env.VITE_API_BASE || "/api";
 
 // Create configured axios connection instance
 export const api = axios.create({

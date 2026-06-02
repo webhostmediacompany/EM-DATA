@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { api } from "../Problemetic/api";
 import "./HistoryDashboard.css";
 
 // Log helper function
 export const logAction = async ({ userId, action, module, message, level = "info" }) => {
     try {
-        await axios.post("http://127.0.0.1:8081/api/log/add/", {
+        await api.post("/log/add/", {
             user_id: userId,
             action,
             module,
@@ -23,7 +23,7 @@ export default function HistoryDashboard() {
 
     const loadLogs = async () => {
         try {
-            const res = await axios.get("http://127.0.0.1:8081/api/log/list/");
+            const res = await api.get("/log/list/");
             // Sort latest first
             setLogs(res.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
         } catch (err) {

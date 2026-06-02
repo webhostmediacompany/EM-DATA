@@ -120,3 +120,12 @@ cd "D:\Ethanol-molasses-realtime-production-dashboard--main\Ethanol-molasses-rea
 git remote remove origin
 git remote add origin <CORRECT-REPO-URL>
 git push -u origin main
+====================================================================
+:: 1. Navigate to the project root directory
+cd /d "d:\Ethanol-molasses-realtime-production-dashboard--main\Ethanol-molasses-realtime-production-dashboard--main"
+
+:: 2. Activate the Python virtual environment
+call .venv\Scripts\activate
+
+:: 3. Spin up the unified Django server on Port 8081
+python manage.py runserver 8081

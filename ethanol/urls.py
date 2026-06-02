@@ -15,16 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.shortcuts import redirect
-
-
-def redirect_to_react(request):
-    return redirect("http://localhost:5173/", permanent=False)
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path("", redirect_to_react),              # React as home
     path("admin/", admin.site.urls),
-    path("api/", include("ethanolapp.urls")), # Backend APIs
+    path("api/", include("ethanolapp.urls")),
+    # Serve index.html for root path
+    path("", TemplateView.as_view(template_name="index.html"), name="home"),
+    # Catch-all pattern for React Router SPA to handle page refreshes/direct loads
+    re_path(r'^.*$', TemplateView.as_view(template_name="index.html"), name="spa-catchall"),
 ]

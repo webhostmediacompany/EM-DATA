@@ -4,31 +4,49 @@ A full-stack Django + React application for monitoring and managing ethanol and 
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Unified Single-Server Mode (Recommended)
 
-### Backend Setup (5 minutes)
+The application has been unified to run entirely under a **single server**. The Django backend handles both the database, REST APIs, WebSocket real-time feeds, and serves the pre-built React frontend SPA directly from port `8081`. 
 
+### One-Click Start (Auto Build & Serve)
+We have provided an automated PowerShell command that starts the unified setup instantly:
 ```powershell
-cd D:\Ethanol-molasses-realtime-production-dashboard--main\Ethanol-molasses-realtime-production-dashboard--main
-py -3.14 -m venv .venv
-.\.venv\Scripts\activate
-pip install --upgrade pip
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver 8081
+powershell .\start-servers.ps1
 ```
 
-Backend available at: **http://127.0.0.1:8081/**
+### Manual Unified Server Setup
+To manually build the frontend and serve everything through Django:
+1. **Build the Frontend**:
+   ```powershell
+   cd ethanol\frontend
+   npm install
+   npm run build
+   cd ..\..
+   ```
+2. **Start the Django Server**:
+   ```powershell
+   .\.venv\Scripts\activate
+   python manage.py runserver 8081
+   ```
+3. Access the portal at: **[http://localhost:8081/](http://localhost:8081/)**
 
-### Frontend Setup (2 minutes)
+---
 
-```powershell
-cd ethanol\frontend
-npm install
-npm run dev
-```
+## 💻 Dual-Server Developer Mode (Side-by-Side)
 
-Frontend available at: **http://localhost:5173/**
+If you are actively developing the user interface and want real-time Vite Hot Module Replacement (HMR):
+1. **Start Backend API (Port 8081)**:
+   ```powershell
+   .\.venv\Scripts\activate
+   python manage.py runserver 8081
+   ```
+2. **Start Frontend Dev Server (Port 5173)**:
+   ```powershell
+   cd ethanol\frontend
+   npm run dev
+   ```
+3. Access the hot-reloading dev portal at: **[http://localhost:5173/](http://localhost:5173/)**
+*(Our dynamic host detection automatically ensures the Vite frontend redirects API calls and WebSockets to Django on port `8081` without any configuration changes!)*
 
 ---
 

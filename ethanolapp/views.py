@@ -117,14 +117,17 @@ def login_user(request):
 # PASSWORD RESET
 # ======================================================================
 
-def send_reset_email(user_email):
+def send_reset_email(user_email, request=None):
     try:
         user = User.objects.get(email=user_email)
         token = get_random_string(50)
 
         PasswordResetToken.objects.create(user=user, token=token)
 
-        reset_link = f"http://localhost:5173/reset-password?token={token}&uid={user.id}"
+        base_url = "http://localhost:8081"
+        if request:
+            base_url = request.build_absolute_uri('/')[:-1]
+        reset_link = f"{base_url}/reset-password?token={token}&uid={user.id}"
 
         send_mail(
             subject="Password Reset",

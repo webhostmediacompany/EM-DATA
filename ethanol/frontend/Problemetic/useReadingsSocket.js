@@ -12,7 +12,9 @@ export default function useReadingsSocket(onMessage) {
             // ENV first → fallback to current host
             const host =
                 import.meta.env.VITE_WS_HOST ||
-                `${window.location.hostname}:8081`;
+                (window.location.port === "5173"
+                    ? `${window.location.hostname}:8081`
+                    : window.location.host);
 
             const url = `${protocol}://${host}/ws/readings/`;
 

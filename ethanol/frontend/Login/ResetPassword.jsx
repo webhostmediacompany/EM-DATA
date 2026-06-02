@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { api } from "../Problemetic/api";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import "./ForgottenPassword.css";
 
@@ -22,7 +22,7 @@ export default function ResetPassword() {
         }
 
         try {
-            const res = await axios.post("http://127.0.0.1:8081/api/reset-password/", {
+            const res = await api.post("/reset-password/", {
                 token: token,
                 uid: uid,
                 password: password

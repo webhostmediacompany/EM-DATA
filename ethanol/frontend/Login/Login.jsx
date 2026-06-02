@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import { api } from "../Problemetic/api";
 import "./Login.css";
 import flamingoLogo from "../src/assets/flamingo.png";
 import { useNavigate } from "react-router-dom";
@@ -16,8 +16,8 @@ export default function Login({ onSignIn }) {
         e.preventDefault();
 
         try {
-            const response = await axios.post(
-                "http://127.0.0.1:8081/api/login/",
+            const response = await api.post(
+                "/login/",
                 {
                     email: form.email,
                     password: form.password,

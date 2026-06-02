@@ -34,7 +34,7 @@ export default function Register() {
 
             if (response.data.success) {
                 alert("✅ Registration successful!");
-                navigate("/login");  // redirect to login page
+                navigate("/loginpage");  // redirect to login page
             } else {
                 alert("❌ " + (response.data.error || "Unknown error"));
             }

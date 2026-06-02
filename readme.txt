@@ -129,3 +129,4 @@ call .venv\Scripts\activate
 
 :: 3. Spin up the unified Django server on Port 8081
 python manage.py runserver 8081
+git push --set-upstream origin main

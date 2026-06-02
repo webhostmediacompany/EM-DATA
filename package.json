@@ -1,5 +1,19 @@
 {
+  "name": "ethanol-molasses-dashboard",
+  "version": "1.0.0",
+  "homepage": "https://webhostmediacompany.github.io/E.M-Analysis-data/",
+  "description": "Unified dashboard runner for React + Django",
+  "scripts": {
+    "install:all": "npm install && cd ethanol/frontend && npm install",
+    "dev:frontend": "cd ethanol/frontend && npm run dev",
+    "dev:backend": ".venv\\Scripts\\python.exe manage.py runserver 8081",
+    "dev": "concurrently --kill-others \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "cd ethanol/frontend && npm run build",
+    "build:django": "cd ethanol/frontend && npm run build:django",
+    "deploy:frontend": "cd ethanol/frontend && npm run deploy"
+  },
   "devDependencies": {
+    "concurrently": "^9.1.0",
     "gh-pages": "^6.3.0"
   }
 }

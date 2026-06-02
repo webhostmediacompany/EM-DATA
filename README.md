@@ -236,3 +236,9 @@ For more troubleshooting, see [BACKEND_SETUP.md](BACKEND_SETUP.md)
 **Version**: 1.0.0  
 **Last Updated**: June 1, 2026  
 **Status**: Production Ready ✅
+
+<!-- ====================================== -->
+git remote add origin https://github.com/webhostmediacompany/E.M-Analysis-data.git
+
+npm run deploy:frontend
+<!-- ========================================= -->

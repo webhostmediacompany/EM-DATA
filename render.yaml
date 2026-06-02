@@ -1,0 +1,36 @@
+services:
+  # Python ASGI Web Service (Django REST APIs + WebSockets)
+  - type: web
+    name: ethanol-molasses-backend
+    runtime: python
+    buildCommand: ./build.sh
+    startCommand: daphne -b 0.0.0.0 -p $PORT ethanol.asgi:application
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: "True"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ethanol-molasses-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: ethanol-molasses-redis
+          property: connectionString
+
+  # Redis Service for Django Channels WebSockets coordination
+  - type: redis
+    name: ethanol-molasses-redis
+    plan: free
+    ipAllowList: [] # Restricts access to internal services only for safety
+
+# PostgreSQL Database Instance
+databases:
+  - name: ethanol-molasses-db
+    plan: free

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/webhostmediacompany/E.M-Analysis-data",
+  "homepage": "https://webhostmediacompany.github.io/E.M-Analysis-data/",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +8,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode standalone",
+    "build:django": "vite build --mode django",
     "lint": "eslint .",
     "preview": "vite preview"
   },

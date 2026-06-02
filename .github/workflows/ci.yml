@@ -1,0 +1,62 @@
+name: Continuous Integration (CI)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  # Verify Django Backend Setup, configuration, checks and unit tests
+  backend-ci:
+    name: Django Backend Checks & Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12' # High compatibility python version for runner environment
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Django Configuration Check
+        run: |
+          python manage.py check
+
+      - name: Run Django Tests
+        run: |
+          python manage.py test
+
+  # Verify Vite Standalone Compilation for Vercel/Netlify hosting compatibility
+  frontend-ci:
+    name: React Frontend Standalone Compilation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: ethanol/frontend/package-lock.json
+
+      - name: Install Frontend Dependencies
+        working-directory: ethanol/frontend
+        run: npm install
+
+      - name: Compile Standalone Production Build
+        working-directory: ethanol/frontend
+        env:
+          VITE_STANDALONE: 'true'
+        run: npm run build
